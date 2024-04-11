@@ -1,0 +1,2 @@
+# FireDefender
+Firefox Extension FireDefender
