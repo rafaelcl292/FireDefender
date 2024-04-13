@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "FireDefender",
+  "version": "1.0",
+  "description": "FireShield is a browser extension developed for the Firefox web browser, designed to enhance user privacy and security by detecting potential threats and privacy violations during web browsing. The extension aims to provide users with valuable insights and protection against various online risks.",
+  "icons": {
+    "48": "icons/fire-defender.svg",
+    "96": "icons/fire-defender.svg",
+    "128": "icons/fire-defender.svg"
+  },
+  "action": {
+    "default_icon": "icons/fire-defender.svg",
+    "default_title": "FireDefender",
+    "default_popup": "popup.html"
+  }
+}
