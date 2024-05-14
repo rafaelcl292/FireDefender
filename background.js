@@ -1,7 +1,7 @@
 const response = {
   url: "",
   thirdParty: [],
-  localStorage: "No",
+  localStorage: 0,
   cookies: [],
 };
 
@@ -12,7 +12,7 @@ browser.runtime.onMessage.addListener((msg, _, sendResponse) => {
   if (msg === "clear") {
     response.url = "";
     response.thirdParty = [];
-    response.localStorage = "No";
+    response.localStorage = 0;
     response.cookies = [];
   }
 });
@@ -46,8 +46,8 @@ browser.webRequest.onBeforeRequest.addListener(
 );
 
 // local storage
-browser.storage.onChanged.addListener((changes, area) => {
-  if (area === "local") {
-    response.localStorage = JSON.stringify(changes);
+browser.runtime.onMessage.addListener(function (message) {
+  if (message.localStorageData) {
+    response.localStorage = message.localStorageData
   }
 });
