@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FireDefender</title>
+    <link href="output.css" rel="stylesheet">
+    <script src="popup.js"></script>
+</head>
+
+<body class="bg-gray-800 text-white">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4 text-red-500">FireDefender</h1>
+        <div class="bg-gray-700 rounded-lg shadow-md p-6">
+            <div id="content">
+                <h2 class="text-xl font-semibold mb-2 text-orange-400">Features</h2>
+                <ul class="list-disc list-inside">
+                    <li>Third-party domains</li>
+                    <li>Browser hijacking threats</li>
+                    <li>Local storage</li>
+                    <li>Number of cookies</li>
+                    <li>Canvas fingerprint</li>
+                    <li>Score</li>
+                </ul>
+                <br>
+                <button
+                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    id="scanButton">Scan</button>
+                <button
+                    class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    id="clearButton">Clear Data</button>
+                <br>
+                <p class="mt-4 text-sm text-gray-400">
+                    Clear data and refresh the page to get a more accurate scan.
+                </p>
+            </div>
+        </div>
+</body>
+
+</html>
