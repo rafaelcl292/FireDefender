@@ -6,6 +6,7 @@ function scan() {
       <p>Third Party: ${response.thirdParty.join(", ")}</p>
       <p>Third Party Count: ${response.thirdParty.length}</p>
       <p>Cookies: ${response.cookies.length}</p>
+      <p>Score: ${response.score}</p>
     `;
   });
 }

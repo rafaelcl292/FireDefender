@@ -3,10 +3,26 @@ const response = {
   thirdParty: [],
   localStorage: 0,
   cookies: [],
+  score: 100,
 };
+
+function calculateScore() {
+  let score = 100;
+  if (response.localStorage > 0) {
+    score -= 20;
+  }
+  if (response.cookies.length > 0) {
+    score -= 20;
+  }
+  if (response.thirdParty.length > 0) {
+    score -= 20;
+  }
+  response.score = score;
+}
 
 browser.runtime.onMessage.addListener((msg, _, sendResponse) => {
   if (msg === "scan") {
+    calculateScore();
     sendResponse(response);
   }
   if (msg === "clear") {
@@ -14,6 +30,7 @@ browser.runtime.onMessage.addListener((msg, _, sendResponse) => {
     response.thirdParty = [];
     response.localStorage = 0;
     response.cookies = [];
+    response.score = 100;
   }
 });
 
@@ -48,6 +65,6 @@ browser.webRequest.onBeforeRequest.addListener(
 // local storage
 browser.runtime.onMessage.addListener(function (message) {
   if (message.localStorageData) {
-    response.localStorage = message.localStorageData
+    response.localStorage = message.localStorageData;
   }
 });
